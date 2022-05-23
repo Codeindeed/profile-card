@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+:root {
+  /* ### Primary */
+  --color-Dark-cyan: hsl(185, 75%, 39%);
+  --color-Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --color-Dark-grayish-blue: hsl(227, 10%, 46%);
+  /* ### Neutral */
+  --color-Dark-gray: hsl(0, 0%, 59%);
+  --color-white: hsla(0, 0%, 100%, 0.994);
+}
+html {
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 62.9%;
+}
+@media only screen and (min-width: 90em) {
+  html {
+    font-size: 112.5%;
+  }
+}
+@media only screen and (max-width: 23.4em) {
+  html {
+    font-size: 50%;
+  }
+}
+body {
+  background-color: var(--color-Dark-cyan);
+  background-size: 70rem;
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right calc(47vw + 15%) bottom calc(65vh - 15vw),
+    left calc(40vw + 25%) top calc(72vh - 15vw);
+}
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 96vh;
+}
+.card {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr) 7rem;
+  width: 30rem;
+  border-radius: 1.2rem;
+
+  overflow: hidden;
+}
+@media only screen and (max-width: 23.4em) {
+  .card {
+    margin: 3rem;
+  }
+}
+
+.svg {
+  grid-row: 1/2;
+  grid-column: 1/-1;
+  width: 100%;
+  z-index: 1;
+}
+.profile {
+  grid-row: 1/2;
+  border: 2px solid #ffff;
+  border-radius: 50%;
+  grid-column: 1/-1;
+  align-self: end;
+  justify-self: center;
+  transform: translateY(3rem);
+  z-index: 10;
+}
+.card__details {
+  background-color: var(--color-white);
+  text-align: center;
+  padding-top: 2rem;
+  z-index: 9;
+  display: grid;
+}
+
+.card__details h1 {
+  justify-self: center;
+  align-self: center;
+}
+.card__details h1 span {
+  color: var(--color-Dark-gray);
+  font-size: 1.9rem;
+  font-weight: 400;
+}
+.card__country {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-Dark-gray);
+}
+.card__numbers {
+  border-top: 1px solid var(--color-Dark-gray);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: var(--color-white);
+}
+.card__numbers li :not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.card__numbers li :not(:first-child) {
+  color: var(--color-Dark-gray);
+  text-transform: capitalize;
+  font-size: 1.6rem;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--color-white);
+  text-decoration: none;
+}
